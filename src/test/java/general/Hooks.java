@@ -1,5 +1,6 @@
 package general;
 
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -17,7 +18,7 @@ public class Hooks extends Base {
     //Before
     @Before
     public void setup(){
-        // Onde esta o Drier do Browser
+        // Onde está o Driver do Browser
         System.setProperty("webdriver.gecko.driver" , "drivers/geckodriver029/geckodriver.exe");
         //Instanciar o driver do Firefox
         base.driver = new FirefoxDriver();
@@ -31,6 +32,7 @@ public class Hooks extends Base {
     }
 
     //After
+    @After
     public void tearDown(){
         base.driver.quit();  //Destruir o objeto do Selenium
 
